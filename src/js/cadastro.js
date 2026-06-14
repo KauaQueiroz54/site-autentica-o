@@ -13,7 +13,7 @@ if (registerForm) {
         const email = document.getElementById("regEmail").value;
         const password = document.getElementById("regPassword").value;
 
-        const { error } = await window.supabaseClient.auth.signUp({
+        const { data, error } = await window.supabaseClient.auth.signUp({
             email,
             password,
             options: {
@@ -24,6 +24,13 @@ if (registerForm) {
         if (error) {
             alert("Erro ao cadastrar: " + error.message);
             return;
+        }
+
+        // Insere na tabela usuarios após cadastro
+        if (data.user) {
+            await window.supabaseClient
+                .from('usuarios')
+                .insert([{ id: data.user.id, email: data.user.email }]);
         }
 
         alert("Cadastro realizado com sucesso! Verifique seu e-mail para confirmação.");
