@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathai — Painel</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="dashboard-body">
+    <header class="nav">
+        <h2>Minhas tarefas</h2>
+        <button id="logoutBtn" class="logout-btn">Sair</button>
+    </header>
+
+    <main class="crud-box">
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Digite uma nova tarefa...">
+            <button id="addTaskBtn" aria-label="Adicionar tarefa">+</button>
+        </div>
+        <ul id="taskList"></ul>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="src/js/dashboard.js"></script>
+</body>
+</html>

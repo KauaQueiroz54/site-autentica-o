@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathai — Recuperar Senha</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <main class="card">
+        <section id="requestFlow">
+            <span class="badge">Kathai</span>
+            <div class="header">
+                <h1>Recuperar senha</h1>
+                <p>Enviaremos um link para o seu e-mail</p>
+            </div>
+
+            <div id="mensagemSucesso" class="msg-sucesso"></div>
+
+            <form id="requestForm">
+                <div class="form-group">
+                    <label for="resetEmail">E-mail cadastrado</label>
+                    <input type="email" id="resetEmail" required placeholder="seu@email.com" autocomplete="email">
+                </div>
+                <button type="submit" class="btn-primary">Enviar link</button>
+                <button type="button" class="back-btn btn-secondary">Voltar ao login</button>
+            </form>
+        </section>
+
+        <section id="updateFlow" style="display: none;">
+            <span class="badge">Kathai</span>
+            <div class="header">
+                <h1>Nova senha</h1>
+                <p>Digite sua nova senha abaixo</p>
+            </div>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label for="newPassword">Nova senha</label>
+                    <input type="password" id="newPassword" placeholder="Mínimo 6 caracteres" autocomplete="new-password" required>
+                </div>
+                <button type="submit" class="btn-primary">Atualizar senha</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="src/js/recuperar.js"></script>
+</body>
+</html>
